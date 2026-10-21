@@ -42,7 +42,7 @@ void Fixed::setRawBits(int const raw) {
 }
 
 int Fixed::toInt(void) const {
-	return (this->rawBits >> 8);
+	return (this->rawBits >> this->fractionalBits);
 }
 
 float Fixed::toFloat(void) const {
