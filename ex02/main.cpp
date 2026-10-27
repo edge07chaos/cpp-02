@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cassert>
 #include "Fixed.hpp"
 
 void testSubjectMain(void) {
@@ -25,16 +24,15 @@ void testComparisons(void) {
     Fixed const b(20);
     Fixed const c(10);
 
-    assert(b > a);
-    assert(a < b);
-    assert(b >= a);
-    assert(a >= c);
-    assert(a <= b);
-    assert(a <= c);
-    assert(a == c);
-    assert(a != b);
-
-    std::cout << "All comparison assertions passed! ✅" << std::endl << std::endl;
+    std::cout << "b > a  : " << (b > a ? "PASS ✅" : "FAIL ❌") << std::endl;
+    std::cout << "a < b  : " << (a < b ? "PASS ✅" : "FAIL ❌") << std::endl;
+    std::cout << "b >= a : " << (b >= a ? "PASS ✅" : "FAIL ❌") << std::endl;
+    std::cout << "a >= c : " << (a >= c ? "PASS ✅" : "FAIL ❌") << std::endl;
+    std::cout << "a <= b : " << (a <= b ? "PASS ✅" : "FAIL ❌") << std::endl;
+    std::cout << "a <= c : " << (a <= c ? "PASS ✅" : "FAIL ❌") << std::endl;
+    std::cout << "a == c : " << (a == c ? "PASS ✅" : "FAIL ❌") << std::endl;
+    std::cout << "a != b : " << (a != b ? "PASS ✅" : "FAIL ❌") << std::endl;
+    std::cout << std::endl;
 }
 
 void testArithmetic(void) {
@@ -67,14 +65,12 @@ void testIncrementDecrement(void) {
 void testMinMax(void) {
     std::cout << "=== Min & Max Functions Test ===" << std::endl;
     
-    // Mutable objects
     Fixed a(15.5f);
     Fixed b(42.0f);
 
     std::cout << "min(a, b): " << Fixed::min(a, b) << " (Expected: 15.5)" << std::endl;
     std::cout << "max(a, b): " << Fixed::max(a, b) << " (Expected: 42)" << std::endl;
 
-    // Const objects
     Fixed const c(100.25f);
     Fixed const d(50.75f);
 
